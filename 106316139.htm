@@ -59,8 +59,8 @@ email:
 <br/>
 你的體重(kg):<input type="text" id="weight" name="weight"><br>
 <br/>
-<button onclick="myFunctionBMI()">計算BMI</button>
-您的BMI:<input type="text" id="bmi" name="BMI">
+<button onclick="myFunction4()">計算BMI</button>
+<input  name="BMI">
 <script>
 function myFunction1() {
 var x=document.getElementById("name").value;
@@ -116,14 +116,18 @@ alert(detype);
 }
 </script>
 <script>
-function myFunctionBMI(){
+function myFunction4(){
 var h=document.getElementById("height").value;
 var w=document.getElementById("weight").value;
-function(h,w){
+var bmiValue =BMI.getBMI(h,w);
+BMI.disp_alert(bmiValue );
+form.BMI.value= bmiValue ;
+}
+BMI.getBMI=function(h,w){
 var bmi=w/((h/100)*(h/100));
 var bmi=document.getElementById("bmi").value;
-}
-function(bmi){
+};
+BMI.disp_alert=function(bmi){
 if (bmi < 18.5)
 {
 alert("過輕!!!");
@@ -139,7 +143,6 @@ alert("過重!!!");
 else
 {
 alert("超重!!!");
-}
 }
 }
 </script>
