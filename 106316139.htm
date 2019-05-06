@@ -55,11 +55,12 @@ email:
 <button onclick="myFunction2()">loadPatient</button>
 <button onclick="myFunction3()">getPatient</button>
  <br><br>
-  你的身高(cm):<input type="text" name="height"><br>
+  你的身高(cm):<input type="text" id="height" name="height"><br>
 <br/>
-你的體重(kg):<input type="text" name="weight"><br>
+你的體重(kg):<input type="text" id="weight" name="weight"><br>
 <br/>
 <button onclick="myFunctionBMI()">計算BMI</button>
+您的BMI:<input type="text" id="bmi" name="BMI">
 <script>
 function myFunction1() {
 var x=document.getElementById("name").value;
@@ -116,25 +117,10 @@ alert(detype);
 </script>
 <script>
 function myFunctionBMI(){
-var BMI={};
-BMI.getBMI=function(a,b){
-var bmi=b/((a/100)*(a/100));
-return bmi;
-};
-BMI.idealweight=function(a){
-var x=(a-100)*0.9;
-return x;
-};
-function Cal(form){
-var a=eval(form.height.value);
-var b=eval(form.weight.value);
-var bmi=eval(form.BMI.value);
-var bmiValue =BMI.getBMI(a,b);
-BMI.disp_alert(bmiValue );
-form.IW.value=BMI.idealweight(a);
-form.BMI.value= bmiValue ;
-}
-BMI.disp_alert = function(bmi){
+var h=document.getElementById("height").value;
+var w=document.getElementById("weight").value;
+var bmi=w/((h/100)*(h/100));
+var bmi=document.getElementById("bmi").value;
 if (bmi < 18.5)
 {
 alert("過輕!!!");
@@ -150,7 +136,6 @@ alert("過重!!!");
 else
 {
 alert("超重!!!");
-}
 }
 }
 </script>
