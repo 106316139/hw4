@@ -49,18 +49,17 @@ email:
 <option value="化妝品皮膚病學">化妝品皮膚病學</option>
 <option value="初級衛生保健">初級衛生保健</option>
 </select><br><br>
-<textarea name="問題與評論">Questions/Comments</textarea><br><br>
+你的身高(cm):<input type="text" id="height">
+<br><br>
+你的體重(kg):<input type="text" id="weight">
+<br><br>
+你的BMI<input type="text" id="bmi">
+<br><br>
 <input type="submit" value="確認送出">
-<button onclick="myFunction1()"> 檢查資料</button>
-<button onclick="myFunction2()">loadPatient</button>
-<button onclick="myFunction3()">getPatient</button>
- <br><br>
-  你的身高(cm):<input type="text" id="height" name="height"><br>
-<br/>
-你的體重(kg):<input type="text" id="weight" name="weight"><br>
-<br/>
-<button onclick="myFunction4()">計算BMI</button>
-<input  name="BMI">
+<button onclick="myFunction1()" type="button"> 檢查資料</button>
+<button onclick="myFunction2()" type="button">loadPatient</button>
+<button onclick="myFunction3()" type="button">getPatient</button>
+<button onclick="myFunction4()" type="button">計算BMI</button>
 <script>
 function myFunction1() {
 var x=document.getElementById("name").value;
@@ -119,31 +118,7 @@ alert(detype);
 function myFunction4(){
 var h=document.getElementById("height").value;
 var w=document.getElementById("weight").value;
-var bmiValue =BMI.getBMI(h,w);
-BMI.disp_alert(bmiValue );
-form.BMI.value= bmiValue ;
-}
-BMI.getBMI=function(h,w){
-var bmi=w/((h/100)*(h/100));
-var bmi=document.getElementById("bmi").value;
-};
-BMI.disp_alert=function(bmi){
-if (bmi < 18.5)
-{
-alert("過輕!!!");
-}
-else if (bmi >= 18.5 && bmi < 25)
-{
-alert("正常!");
-}
-else if (bmi >= 25 && bmi< 30)
-{
-alert("過重!!!");
-}
-else
-{
-alert("超重!!!");
-}
+document.getElementById("bmi").value=w/((h/100)*(h/100));
 }
 </script>
 </form>
