@@ -119,8 +119,11 @@ alert(detype);
 function myFunctionBMI(){
 var h=document.getElementById("height").value;
 var w=document.getElementById("weight").value;
+function(h,w){
 var bmi=w/((h/100)*(h/100));
 var bmi=document.getElementById("bmi").value;
+}
+function(bmi){
 if (bmi < 18.5)
 {
 alert("過輕!!!");
@@ -136,6 +139,7 @@ alert("過重!!!");
 else
 {
 alert("超重!!!");
+}
 }
 }
 </script>
